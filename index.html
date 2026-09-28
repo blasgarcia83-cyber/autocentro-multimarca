@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autocentro Multimarca | Catálogo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a href="index.html"><img src="assets/logo-autocentro.png" class="logo"></a>
+    <nav><a href="#stock">Stock</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a></nav>
+    <a href="admin.html" class="btn blue">Administrar stock</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">AUTOCENTRO MULTIMARCA · JUNÍN</span>
+      <h1>Encontrá tu próximo vehículo.</h1>
+      <p>Autos, SUV, camionetas y utilitarios nuevos y usados. Consultá cada unidad directamente por WhatsApp.</p>
+      <div class="actions">
+        <a href="#stock" class="btn blue">Ver stock disponible</a>
+        <a href="#contacto" class="btn white">Contactarnos</a>
+      </div>
+      <div class="trust"><span>✓ Más de 10 años de trayectoria</span><span>✓ Permutas</span><span>✓ Gestoría propia</span></div>
+    </div>
+    <div class="hero-card">
+      <span>STOCK PUBLICADO</span>
+      <strong id="stockCount">0</strong>
+      <small>vehículos disponibles</small>
+      <hr>
+      <p>El catálogo se actualiza desde el panel de administración.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stock" class="wrap section">
+  <div class="section-head">
+    <div><span class="eyebrow">CATÁLOGO</span><h2>Vehículos disponibles</h2></div>
+    <span id="resultCount" class="muted"></span>
+  </div>
+
+  <div class="filters">
+    <input id="search" placeholder="Buscar marca, modelo o versión...">
+    <select id="type"><option value="">Todos</option><option>0 km</option><option>Usado</option></select>
+    <select id="category"><option value="">Todas las categorías</option><option>Auto</option><option>SUV</option><option>Camioneta</option><option>Utilitario</option></select>
+    <select id="sort"><option value="featured">Destacados</option><option value="priceAsc">Precio menor</option><option value="priceDesc">Precio mayor</option><option value="year">Año más nuevo</option></select>
+  </div>
+
+  <div id="catalog" class="catalog"></div>
+  <div id="empty" class="empty hidden"><h3>No encontramos vehículos</h3><p>Probá cambiando los filtros.</p></div>
+</section>
+
+<section id="nosotros" class="why">
+  <div class="wrap">
+    <span class="eyebrow">AUTOCENTRO MULTIMARCA</span>
+    <h2>Una forma simple de comprar tu próximo vehículo.</h2>
+    <div class="features">
+      <article><b>01</b><h3>Stock multimarca</h3><p>Autos, SUV, camionetas y utilitarios en un solo lugar.</p></article>
+      <article><b>02</b><h3>Atención personalizada</h3><p>Te ayudamos a encontrar la unidad que estás buscando.</p></article>
+      <article><b>03</b><h3>Permutas y financiación</h3><p>Consultá alternativas para concretar tu operación.</p></article>
+      <article><b>04</b><h3>Gestoría propia</h3><p>Acompañamos el proceso administrativo de la operación.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="wrap contact-box">
+    <div><span class="eyebrow light-blue">CONTACTO</span><h2>¿Viste un vehículo que te interesa?</h2><p>Consultanos y coordinamos una visita al salón.</p></div>
+    <div><a id="mainWhatsapp" href="#" class="btn white">Consultar por WhatsApp</a><small>Avenida Circunvalación esquina Yanquelen · Junín, Buenos Aires</small></div>
+  </div>
+</section>
+
+<footer><div class="wrap footer"><img src="assets/logo-autocentro.png"><span>© <span id="year"></span> Autocentro Multimarca</span></div></footer>
+
+<div id="vehicleModal" class="modal hidden">
+  <div class="shade" data-close></div>
+  <div class="modal-card">
+    <button class="close" data-close>×</button>
+    <div id="modalPhoto" class="modal-photo"></div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

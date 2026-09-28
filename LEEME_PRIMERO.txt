@@ -1,0 +1,12 @@
+AUTOCENTRO MULTIMARCA - WEB CATÁLOGO
+
+1) Hacé clic derecho sobre el archivo ZIP y elegí "Extraer todo...".
+2) Entrá a la carpeta extraída.
+3) Verificá que estén index.html, styles.css, app.js, admin.html, admin.js y la carpeta assets.
+4) Dentro de esa carpeta, hacé doble clic en index.html.
+
+IMPORTANTE: NO abras index.html desde dentro del ZIP ni desde la carpeta temporal de Chrome.
+
+Para administrar el stock, abrí admin.html desde la misma carpeta.
+
+Esta versión guarda el stock en el navegador (localStorage). Para que el stock se sincronice entre computadoras y celulares habrá que conectarla luego a una base de datos online.

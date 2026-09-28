@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autocentro | Administración</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+<header class="top">
+  <div class="wrap nav">
+    <a href="index.html"><img src="assets/logo-autocentro.png" class="logo"></a>
+    <strong class="admin-label">ADMINISTRACIÓN DE STOCK</strong>
+    <a href="index.html" class="btn white">Ver catálogo</a>
+  </div>
+</header>
+
+<main class="wrap admin-main">
+  <div class="admin-head">
+    <div><span class="eyebrow">PANEL DE CONTROL</span><h1>Stock de vehículos</h1><p class="muted">Cargá, editá, publicá, ocultá y eliminá unidades.</p></div>
+    <button id="newVehicle" class="btn blue">+ Nuevo vehículo</button>
+  </div>
+
+  <div class="admin-tools">
+    <button id="exportBtn" class="btn white">Exportar stock</button>
+    <label class="btn white file-btn">Importar stock <input id="importFile" type="file" accept=".json,.csv"></label>
+    <button id="resetBtn" class="btn danger">Restaurar demo</button>
+  </div>
+
+  <div id="stats" class="stats"></div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Foto</th><th>Vehículo</th><th>Año</th><th>KM</th><th>Precio</th><th>Estado</th><th>Acciones</th></tr></thead>
+      <tbody id="stockRows"></tbody>
+    </table>
+  </div>
+</main>
+
+<div id="editor" class="modal hidden">
+  <div class="shade"></div>
+  <div class="editor-card">
+    <button id="closeEditor" class="close">×</button>
+    <span class="eyebrow">FICHA DEL VEHÍCULO</span>
+    <h2 id="editorTitle">Nuevo vehículo</h2>
+
+    <form id="vehicleForm">
+      <input id="vehicleId" type="hidden">
+      <div class="form-grid">
+        <label>Marca<input id="brand" required></label>
+        <label>Modelo<input id="model" required></label>
+        <label class="wide">Versión<input id="version"></label>
+        <label>Tipo<select id="vehicleType"><option>Usado</option><option>0 km</option></select></label>
+        <label>Categoría<select id="vehicleCategory"><option>Auto</option><option>SUV</option><option>Camioneta</option><option>Utilitario</option></select></label>
+        <label>Año<input id="year" type="number"></label>
+        <label>Kilómetros<input id="km" type="number"></label>
+        <label>Precio<input id="price" type="number"></label>
+        <label>Combustible<input id="fuel" placeholder="Nafta / Diésel / Híbrido"></label>
+        <label>Transmisión<input id="transmission" placeholder="Manual / Automática"></label>
+        <label class="wide">Descripción<textarea id="description" rows="4" placeholder="Equipamiento, estado, financiación, etc."></textarea></label>
+        <label class="wide">Fotos del vehículo<input id="photos" type="file" accept="image/*" multiple><small>En esta versión las fotos quedan guardadas localmente en el navegador.</small></label>
+        <label class="check"><input id="available" type="checkbox" checked> Publicar en catálogo</label>
+        <label class="check"><input id="featured" type="checkbox"> Destacar vehículo</label>
+      </div>
+      <div id="photoPreview" class="photo-preview"></div>
+      <div class="editor-actions"><button type="button" id="cancel" class="btn white">Cancelar</button><button class="btn blue">Guardar vehículo</button></div>
+    </form>
+  </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
